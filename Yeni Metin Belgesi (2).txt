@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<math.h>
+#define PI=3.14
+
+
+
+
+double circle_area(double radius){
+	
+	double radius;
+	area=PI*pow(radius,2);
+	return area; 
+}
+
+
+double calc_hypotenuse (int side1 ,int side2){
+	
+		double hypotenuse;
+		pow(hypotenuse,2)=pow(side1,2)+pow(side2,2);
+		return hypotenuse;
+
+}
+double calc_radius_of_smallest_circle(int side1 ,int side2){
+			
+	double r2;
+	pow(r2,2)=pow(side1/2,2)+pow(side2/2,2);
+	return r2;
+	
+}
+double calc_radius_of_largest_circle(int side1 ,int side2){
+	
+	double r1;
+	*****************
+	return r1;
+			
+}
+double calc_area_of_smallest_circle(int side1 ,int side2){
+	
+		double r2;
+	*************
+	area=PI*pow(r2,2);	
+	return area;
+}
+double calc_area_of_largest_circle(int side1 ,int side2){
+	
+	double r1;
+	****************
+	area=PI*pow(r1,2);
+	return area;
+}
+
+double calc__of_smallest_square(int side1 ,int side2){
+	
+	
+		
+}
+double calc_area_of_largest_square(int side1 ,int side2){
+	
+	area=pow(side1*****,2);   /*hangi side yazýlacaðýný belirle*/
+	return area;
+	
+	
+	
+}
+
+double calc_area_of_square(int side){
+	
+	
+	area=side*side;
+	return area;
+}
+
+
+
+
+void display_results(double largest_circle,double largest_square,double smallest_circle,double smallest_square){
+
+double	
+	
+	
+	
+}
+
+int main(){
+	
+	int side1,side2;
+	printf("enter first side for rectangle: ");
+	scanf("%d",&side1);
+	printf("enter second side for rectangle:");
+	scanf("%d",&side2);
+	
+	
+	return 0;
+}
