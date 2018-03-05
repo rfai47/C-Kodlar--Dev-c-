@@ -1,94 +1,87 @@
 #include<stdio.h>
 #include<math.h>
-#define PI=3.14
+#define PI 3.14
 
-
-
-
+//side1= kısa kenar
+//side2= uzun kenar
+//Dairenin Alanı
 double circle_area(double radius){
 	
-	double radius;
-	area=PI*pow(radius,2);
+	
+	 double area=PI*pow(radius,2);
 	return area; 
 }
 
-
-double calc_hypotenuse (int side1 ,int side2){
+//Hipotenüs Bulma 
+double calc_hypotenuse (double side1 ,double side2){
 	
 		double hypotenuse;
-		pow(hypotenuse,2)=pow(side1,2)+pow(side2,2);
+			hypotenuse=pow(side1,2)+pow(side2,2);
+			hypotenuse=sqrt(hypotenuse);
 		return hypotenuse;
 
 }
-double calc_radius_of_smallest_circle(int side1 ,int side2){
+	//Daire için en küçük yarı çap bulma kısa kenarı^2+uzunkenar^2=r^2
+double calc_radius_of_smallest_circle(double side1 ,double side2){
 			
 	double r2;
-	pow(r2,2)=pow(side1/2,2)+pow(side2/2,2);
+	r2=pow(side1/2,2)+pow(side2/2,2);
+	r2=pow(r2,2);
 	return r2;
 	
 }
-double calc_radius_of_largest_circle(int side1 ,int side2){
+
+// daire için en Büyük yarı çap Kısa kenar kadardır.
+double calc_radius_of_largest_circle(double side1 ,double side2)
+{
 	
-	double r1;
-	*****************
-	return r1;
-			
+	return side1;
 }
-double calc_area_of_smallest_circle(int side1 ,int side2){
+//en uzun daire alanı üstte  bulduğumuz hipotenüs çaptır yarısı da yarı çap olduğu için
+double calc_area_of_largest_circle(double side1 ,double side2){
 	
-		double r2;
-	*************
-	area=PI*pow(r2,2);	
-	return area;
-}
-double calc_area_of_largest_circle(int side1 ,int side2){
-	
-	double r1;
-	****************
-	area=PI*pow(r1,2);
-	return area;
+	return PI*pow((calc_hypotenuse(side1,side2)/2),2);
 }
 
-double calc__of_smallest_square(int side1 ,int side2){
+//en küçük dairenin çapı kısa kenar kadardır yarıçapı ise kısa kenarın yarısıdır.
+double calc_area_of_smallest_circle(double side1 ,double side2){
 	
-	
-		
-}
-double calc_area_of_largest_square(int side1 ,int side2){
-	
-	area=pow(side1*****,2);   /*hangi side yaz�laca��n� belirle*/
-	return area;
-	
-	
-	
-}
 
-double calc_area_of_square(int side){
-	
-	
-	area=side*side;
-	return area;
+	return  PI*pow(side1/2,2);
 }
 
 
-
-
-void display_results(double largest_circle,double largest_square,double smallest_circle,double smallest_square){
-
-double	
-	
-	
-	
+//Dikdörtgen içinde oluşturulabilecek en büyük alan uzun kenar kadardır.
+double calc_area_of_largest_square(double side1 ,double side2)
+{
+	return side2*side2;
 }
+// en küçük kare ise küçük  kenar kadardır.
+double calc_of_smallest_square(double side1 ,double side2)
+{
+	return side1*side1;
+}
+int main()
+{
+	double ShortSide;
+	double LongSide;
+	
+	printf("Short Edge Enter:");
+	scanf("%lf",&ShortSide);
+	 printf("Long Edge Enter:");
+	scanf("%lf",&LongSide);
+	
+	if(ShortSide>LongSide)
+	{
+		double gecici=LongSide;
+		LongSide=ShortSide,
+		ShortSide=gecici;
+	}
+printf("The area of the largest circle that fits inside a rectangle:%.2f\n",calc_area_of_smallest_circle(ShortSide,LongSide));
+printf("The area of the largest square that fits inside a rectangle:%.2f\n",calc_of_smallest_square(ShortSide,LongSide));
+printf("Thea area of the smallest circle that surrounds the same rectangle:%.2f\n",calc_area_of_largest_circle(ShortSide,LongSide));
+printf("Thea area of the smallest square that surrounds the same rectangle:%.2f\n",calc_area_of_largest_square(ShortSide,LongSide));
+	
 
-int main(){
-	
-	int side1,side2;
-	printf("enter first side for rectangle: ");
-	scanf("%d",&side1);
-	printf("enter second side for rectangle:");
-	scanf("%d",&side2);
-	
-	
-	return 0;
+
 }
