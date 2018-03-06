@@ -61,6 +61,14 @@ double calc_of_smallest_square(double side1 ,double side2)
 {
 	return side1*side1;
 }
+void display_result(double largest_cirle, double largest_square,double smallest_circle ,double smallest_square )
+{
+	
+printf("The area of the largest circle that fits inside a rectangle:%.2f\n",largest_cirle);
+printf("The area of the largest square that fits inside a rectangle:%.2f\n",largest_square);
+printf("Thea area of the smallest circle that surrounds the same rectangle:%.2f\n",smallest_circle);
+printf("Thea area of the smallest square that surrounds the same rectangle:%.2f\n",smallest_square);
+}
 int main()
 {
 	double ShortSide;
@@ -77,11 +85,19 @@ int main()
 		LongSide=ShortSide,
 		ShortSide=gecici;
 	}
-printf("The area of the largest circle that fits inside a rectangle:%.2f\n",calc_area_of_smallest_circle(ShortSide,LongSide));
+double largest_circle=calc_area_of_smallest_circle(ShortSide,LongSide);
+double largest_square=calc_of_smallest_square(ShortSide,LongSide);
+double smallest_circle=calc_area_of_largest_circle(ShortSide,LongSide);
+double smallest_square=calc_area_of_largest_square(ShortSide,LongSide);
+
+
+display_result(largest_circle,largest_square,smallest_circle,smallest_square);
+
+/*printf("The area of the largest circle that fits inside a rectangle:%.2f\n",calc_area_of_smallest_circle(ShortSide,LongSide));
 printf("The area of the largest square that fits inside a rectangle:%.2f\n",calc_of_smallest_square(ShortSide,LongSide));
 printf("Thea area of the smallest circle that surrounds the same rectangle:%.2f\n",calc_area_of_largest_circle(ShortSide,LongSide));
 printf("Thea area of the smallest square that surrounds the same rectangle:%.2f\n",calc_area_of_largest_square(ShortSide,LongSide));
-	
+	*/
 
 
 }
